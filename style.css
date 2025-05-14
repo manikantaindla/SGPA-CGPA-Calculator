@@ -1,0 +1,170 @@
+body {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+button {
+  background: #ffffff22;
+  border: 1px solid #ffffff55;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffffff55;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+.subject-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.subject-row input,
+.subject-row select {
+  flex: 1;
+}
+
+.subject-row button {
+  background: #ff4444;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.subject-row button:hover {
+  background: #ff0000;
+}
+
+#result {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+#feedbackTrigger {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff33;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#feedbackPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  z-index: 9999;
+}
+
+#feedbackPopup.visible {
+  visibility: visible;
+}
+
+.popup-content {
+  background: white;
+  color: #000;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.feedback-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-content button[type="submit"] {
+  background: #2575fc;
+}
+
+.popup-content button[type="button"] {
+  background: #ff4444;
+}
+
+.dark-mode {
+  background: linear-gradient(to right, #141E30, #243B55);
+  color: #fff;
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1, h2 {
+    font-size: 1.4em;
+  }
+
+  .subject-row {
+    flex-direction: column;
+  }
+
+  input, select {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .popup-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #result {
+    font-size: 1.2em;
+  }
+}

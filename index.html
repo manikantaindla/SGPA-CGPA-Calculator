@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SGPA/CGPA Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>SGPA / CGPA Calculator</h1>
+
+<div id="modeSelection">
+  <button onclick="selectMode('sgpa')">Calculate SGPA</button>
+  <button onclick="selectMode('cgpa')">Calculate CGPA</button>
+</div>
+
+<div id="sgpaForm" class="hidden">
+  <h2>SGPA Calculator</h2>
+  <div id="subjectInputs"></div>
+  <button onclick="addSubject()">Add Subject</button>
+  <button onclick="calculateSGPA()">Calculate SGPA</button>
+  <button onclick="goBack()">Go Back</button>
+</div>
+
+<div id="cgpaForm" class="hidden">
+  <h2>CGPA Calculator</h2>
+  <input type="number" id="numSem" placeholder="Enter number of semesters" />
+  <button onclick="generateSemesterInputs()">Generate Inputs</button>
+  <div id="cgpaInputs"></div>
+  <button onclick="calculateCGPA()">Calculate CGPA</button>
+  <button onclick="goBack()">Go Back</button>
+</div>
+
+<div id="result"></div>
+<button id="exportPdfBtn" class="hidden" onclick="exportToPDF()">Export as PDF</button>
+<button id="themeToggle" onclick="toggleTheme()">Toggle Theme</button>
+
+
+  </div>
+
+  <div id="gradeTableContainer" class="hidden">
+  <h2 style="text-align:center; margin-top: 20px;">Grade Report</h2>
+  <div class="table-wrapper">
+    <table id="gradeTable">
+      <thead>
+        <tr>
+          <th>Subject Name</th>
+          <th>Marks</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <h3 id="overallGrade"></h3>
+  <div style="text-align: center;">
+    <button onclick="exportToPDF()">Export as PDF</button>
+  </div>
+</div>
+
+  <!-- Feedback Trigger -->
+
+  <div id="feedbackTrigger" onclick="showFeedbackPopup()">Please provide FEEDBACK for further improvements and Thanks in advance !!</div>
+
+  <!-- Feedback Popup -->
+
+  <div id="feedbackPopup">
+    <div class="popup-content" onclick="event.stopPropagation();">
+      <h3>We'd love your feedback!</h3>
+      <form id="feedbackForm" action="https://formspree.io/f/xnndoaon" method="POST">
+        <textarea name="feedback" required placeholder="Your feedback here..."></textarea>
+        <div class="feedback-buttons">
+          <button type="submit">Submit</button>
+          <button type="button" onclick="closeFeedback()">✖</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
