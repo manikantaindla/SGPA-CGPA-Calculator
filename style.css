@@ -145,22 +145,45 @@ input, select, textarea {
   }
 
   .subject-row {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
-  input, select {
+  .subject-row input,
+  .subject-row select {
+    flex: 1 1 40%;
+    min-width: 120px;
+  }
+
+  .subject-row button {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+
+  .feedback-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .feedback-buttons button {
+    flex: 1;
     font-size: 14px;
-    padding: 6px;
+    padding: 10px;
+    white-space: nowrap;
   }
 
   button {
-    width: 100%;
     font-size: 14px;
     padding: 10px;
+    white-space: nowrap;
   }
 
   .popup-content {
-    width: 90%;
+    width: 95%;
     padding: 20px;
   }
 
@@ -168,3 +191,4 @@ input, select, textarea {
     font-size: 1.2em;
   }
 }
+
